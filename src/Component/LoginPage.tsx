@@ -24,7 +24,7 @@ export const LoginPage = () => {
     const onSubmit: SubmitHandler<Inputs> = async (data) => {
         console.log(watch()) // watch input value by passing the name of it
         try {
-            const response = await fetch('http://localhost:3000/auth/login', {
+            const response = await fetch('https://ia3-web-api.onrender.com/auth/login', {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json'

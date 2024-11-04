@@ -28,7 +28,7 @@ export const RegisterPage = () => {
                 email: data.email,
                 password: data.password,
             }
-            const response = await fetch('http://localhost:3000/user/register', {
+            const response = await fetch('https://ia3-web-api.onrender.com/user/register', {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json'
