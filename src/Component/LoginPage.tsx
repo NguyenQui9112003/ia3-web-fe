@@ -61,6 +61,10 @@ export const LoginPage = () => {
         }
     }, [isSubmitSuccessful, reset]);
 
+    const handleToRegister = () => {
+        navigate(`/register`)
+    }
+
     return (
         <>
             <ToastContainer />
@@ -95,8 +99,7 @@ export const LoginPage = () => {
                         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
                             Sign In
                         </button>
-
-                        <a className="inline-block align-baseline font-italic text-sm text-blue-300 hover:text-blue-700 hover:underline mx-7" type='submit' href='/register'>
+                        <a className="inline-block align-baseline font-italic text-sm text-blue-300 hover:text-blue-700 hover:underline mx-7" type='submit' onClick={handleToRegister} style={{ cursor: 'pointer' }}>
                             Register account?
                         </a>
                     </div>

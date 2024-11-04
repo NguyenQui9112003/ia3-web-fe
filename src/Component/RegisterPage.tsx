@@ -2,8 +2,11 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { toast, ToastContainer } from 'react-toastify';
 import { useEffect } from "react";
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
 
 export const RegisterPage = () => {
+    const navigate = useNavigate();
+
     type Inputs = {
         email: string
         password: string
@@ -69,6 +72,10 @@ export const RegisterPage = () => {
 
     console.log(watch()) // watch input value by passing the name of it
 
+    const backToLogin = () => {
+        navigate(`/login`);
+    }
+
     return (
         <>
             <ToastContainer />
@@ -125,7 +132,7 @@ export const RegisterPage = () => {
                         <button className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
                             Sign Up
                         </button>
-                        <a className="text-center mt-2 inline-block align-baseline font-italic text-sm text-blue-300 hover:text-blue-700 hover:underline" type='submit' href='/login'>
+                        <a className="text-center mt-2 inline-block align-baseline font-italic text-sm text-blue-300 hover:text-blue-700 hover:underline" type='submit' onClick={backToLogin} style={{ cursor: 'pointer' }}>
                             Back
                         </a>
                     </div>
